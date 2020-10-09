@@ -23,11 +23,11 @@ const Login = () => {
                 <h1>Gotcha</h1>
                 <div className="email">
                     <label>Email:</label>
-                    <input type="text" data-test="email" defaultValue="Email" onChange={handleChangeEvents} />
+                    <input type="email" data-test="email" placeholder="Email" onChange={handleChangeEvents} />
                 </div>
                 <div className="password">
                     <label>Password:</label>
-                    <input type="password" data-test="password" defaultValue="Password" onChange={handlePasswordChange} />
+                    <input type="password" data-test="password" placeholder="Password" onChange={handlePasswordChange} />
                 </div>
             <input type="submit" value="Login" data-test="submit" />
             </form>
