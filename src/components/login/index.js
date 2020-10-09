@@ -1,6 +1,6 @@
 import React from 'react';
 import logo from '../../images/logo.png';
-import './styles.css';
+import './styles.scss';
 
 const Login = () => {
 
