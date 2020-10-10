@@ -17,19 +17,19 @@ const Login = () => {
     };
 
     return (
-        <div className="login">
+        <div className="login" data-test="loginComponent">
             <form onSubmit={handleSubmitevents}>
-                <img src={logo} alt="logo" width="60" height="60" />
+                <img src={logo} alt="logo" data-test="loginLogo" width="60" height="60" />
                 <h1>Gotcha</h1>
-                <div className="email">
+                <div className="email" data-test="loginEmail">
                     <label>Email:</label>
                     <input type="email" data-test="email" placeholder="Email" onChange={handleChangeEvents} />
                 </div>
-                <div className="password">
+                <div className="password" data-test="loginPassword">
                     <label>Password:</label>
                     <input type="password" data-test="password" placeholder="Password" onChange={handlePasswordChange} />
                 </div>
-            <input type="submit" value="Login" data-test="submit" />
+            <input type="submit" value="Login" data-test="loginSubmit" />
             </form>
         </div>
     )
