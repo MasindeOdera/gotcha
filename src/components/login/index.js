@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { connect, useDispatch, useSelector } from 'react-redux';
 import logo from '../../images/logo.png';
 import './styles.scss';
 
@@ -7,6 +8,10 @@ const Login = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [loggedIn, setLoggedIn] = useState(false);
+
+    const dispatch = useDispatch();
+    const state = useSelector((state) => state);
+    console.log(state);
 
     console.log(loggedIn);
 
@@ -36,6 +41,7 @@ const Login = () => {
                 // If the responseText has 'auth_token', then the credentials were accepted.
                 if (authenticated === 'a') {
                     setLoggedIn(true);
+                    dispatch({type:"LOGIN_STATUS", payload: true});
                 }
                 else {
                     setLoggedIn(false);
@@ -78,4 +84,4 @@ const Login = () => {
     )
 }
 
-export default Login;
+export default connect(null)(Login);
