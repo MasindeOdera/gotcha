@@ -1,7 +1,7 @@
 import React from 'react';
-import { connect } from 'react-redux';
-import { useSelector } from 'react-redux';
+import { connect, useSelector } from 'react-redux';
 import Login from './components/login';
+import Header from './components/header';
 import './App.css';
 
 function App() {
@@ -12,7 +12,7 @@ function App() {
 
   return (
     <div className="App">
-      { !login ? <Login /> : null }
+      { !login ? <Login /> : <Header /> }
     </div>
   );
 }
