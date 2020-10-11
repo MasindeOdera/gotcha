@@ -1,0 +1,18 @@
+@import "../../sharedStyles.scss";
+
+.search {
+  justify-content: center;
+  text-align: center;
+  padding-top: 10px;
+  margin: auto;
+  width: 80%;
+
+  input[type="search"] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid $primaryBorder;
+    box-sizing: border-box;
+  }
+}

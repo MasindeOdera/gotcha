@@ -1,25 +1,32 @@
-import { FETCH_REPOS, FETCH_QUERY, LOADING, LOGIN_STATUS, CLEAR_ITEMS } from './types';
+import { SAVE_REPOS, SAVE_QUERY, LOADING, LOGIN_STATUS, CLEAR_ITEMS } from './types';
 
-export const fetchRepos = (currentPage, query) => dispatch => {
-    let url = `https://api.github.com/search/repositories?q=${query}+in:repositories?page=${currentPage}&per_page=30`;
-    fetch(url)
-    .then(res => res.json())
-    .then(data => dispatch({
-        type: FETCH_REPOS,   
-        payload: data,     
-    })).then(data => console.log({data}));
+// export const fetchRepos = (currentPage, query) => dispatch => {
+//     let url = `https://api.github.com/search/repositories?q=${query}+in:repositories?page=${currentPage}&per_page=30`;
+//     fetch(url)
+//     .then(res => res.json())
+//     .then(data => dispatch({
+//         type: FETCH_REPOS,   
+//         payload: data,     
+//     })).then(data => console.log({data}));
 
-    var myHeaders = new Headers();
+//     var myHeaders = new Headers();
 
-    myHeaders.append('Content-Type', 'text/xml');
-    myHeaders.get('Content-Type') // should return 'text/xml';
-    console.log(myHeaders);
+//     myHeaders.append('Content-Type', 'text/xml');
+//     myHeaders.get('Content-Type') // should return 'text/xml';
+//     console.log(myHeaders);
 
+// };
+
+export const saveRepos = res => {
+    return {
+        type: SAVE_REPOS,
+        payload: res
+    }
 };
 
-export const fetchQuery = query => {
+export const saveQuery = query => {
     return {
-        type: FETCH_QUERY,
+        type: SAVE_QUERY,
         payload: query
     }
 };
