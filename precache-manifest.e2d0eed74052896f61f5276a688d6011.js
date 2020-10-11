@@ -1,27 +1,27 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "796c1734a31ec31a1a161bff6f00af91",
+    "revision": "1e5d0a30541852f733a78a99fd5ab4c0",
     "url": "/gotcha/index.html"
   },
   {
-    "revision": "8c4b2e48a3860f500d51",
+    "revision": "9ec8e68145dc3aa04dd1",
     "url": "/gotcha/static/css/2.dad2c07a.chunk.css"
   },
   {
-    "revision": "c499030e248e33510bb4",
+    "revision": "f81dfcda426fba6f11a6",
     "url": "/gotcha/static/css/main.8932d7bd.chunk.css"
   },
   {
-    "revision": "8c4b2e48a3860f500d51",
-    "url": "/gotcha/static/js/2.4c48890b.chunk.js"
+    "revision": "9ec8e68145dc3aa04dd1",
+    "url": "/gotcha/static/js/2.b26207b0.chunk.js"
   },
   {
     "revision": "5bd09eb7f2cf4d145d532d862be18942",
-    "url": "/gotcha/static/js/2.4c48890b.chunk.js.LICENSE.txt"
+    "url": "/gotcha/static/js/2.b26207b0.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "c499030e248e33510bb4",
-    "url": "/gotcha/static/js/main.4c1318c5.chunk.js"
+    "revision": "f81dfcda426fba6f11a6",
+    "url": "/gotcha/static/js/main.6a32af81.chunk.js"
   },
   {
     "revision": "e4d6498133e76938657d",
