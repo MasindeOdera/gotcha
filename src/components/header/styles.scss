@@ -1,1 +1,37 @@
 @import "../../sharedStyles.scss";
+
+.header {
+  background-color: $primaryBackground;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+  box-shadow: 5px 10px 8px $primaryShadow;
+  font-size: calc(4px + 2vmin);
+  color: $primaryWhite;
+  padding: 4px;
+  margin: auto;
+  justify-content: center;
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  img {
+    padding: 8px 0;
+  }
+
+  img,
+  h2 {
+    padding-right: 4rem;
+    cursor: default;
+  }
+
+  .logout {
+    background-color: $primaryBlack;
+    color: $primaryWhite;
+    padding: 4px 8px;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    height: max-content;
+  }
+}

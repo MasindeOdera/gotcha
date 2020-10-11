@@ -12,7 +12,10 @@ function App() {
 
   return (
     <div className="App">
-      { !login ? <Login /> : <Header /> }
+      { !login ?
+        <Login /> :
+        <Header />
+      }
     </div>
   );
 }

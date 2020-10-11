@@ -7,6 +7,7 @@ const Login = () => {
 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [login, setLogin] = useState('Login');
 
     const dispatch = useDispatch();
 
@@ -20,6 +21,9 @@ const Login = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
+
+        //Let user know that an action was taken.
+        setLogin('Loading...');
 
         var data = JSON.stringify({
             "email": email,
@@ -39,6 +43,7 @@ const Login = () => {
                     alert("Incorrect Email/Password, please try again");
                     setEmail('');
                     setPassword('');
+                    setLogin('Login');
                 }
             }
 
@@ -61,7 +66,7 @@ const Login = () => {
 
     return (
         <div className="login" data-test="loginComponent">
-            <form onSubmit={handleSubmit}>
+            <form className="loginForm" onSubmit={handleSubmit}>
                 <img src={logo} alt="logo" data-test="loginLogo" width="60" height="60" />
                 <h1>Gotcha</h1>
                 <div className="email">
@@ -72,7 +77,7 @@ const Login = () => {
                     <label>Password:</label>
                     <input type="password" data-test="loginPassword" placeholder="Password" onChange={handlePasswordChange} required/>
                 </div>
-                <input type="submit" value="Login" data-test="loginSubmit" />
+                <input type="submit" value={login} data-test="loginSubmit" />
             </form>
         </div>
     )

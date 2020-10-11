@@ -6,7 +6,7 @@
   padding: 0;
   margin: auto;
 
-  form {
+  .loginForm {
     background-color: $primaryBackground;
     border-radius: 25px;
     padding: 14px;
@@ -18,12 +18,14 @@
 
     h1 {
       cursor: default;
+      color: $primaryWhite;
     }
 
     .email,
     .password {
       text-align: left;
-      font-size: 1.2rem;
+      font-size: 1.4rem;
+      font-weight: 500;
     }
 
     input[type="email"],
