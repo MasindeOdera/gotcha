@@ -5,26 +5,10 @@ import './styles.scss';
 const SearchBar = () => {
 
     const dispatch = useDispatch();
+    // eslint-disable-next-line
     const state = useSelector((state) => state);
     // eslint-disable-next-line
     const [query, setQuery] = useState('');
-    console.log(state);
-
-    // const fetchAnswer = useCallback(() => {
-    //     fetch("https://opendata.rdw.nl/resource/m9d7-ebf2.json")
-    //     .then(res => res.json())
-    //     .then(res => {
-    //         console.log({ res });
-    //         dispatch({type:"SAVE_REPOS", payload: res});
-    //     })
-    //     .catch(error => {
-    //         console.error({error});
-    //     })
-    // }, [dispatch]);
-
-    // useEffect(() => {
-    //     fetchAnswer();
-    // }, [fetchAnswer]);
 
 
     const handleSearch = (e) => {
@@ -44,10 +28,10 @@ const SearchBar = () => {
             let choice = vehicle[0];
             dispatch({ type: "SAVE_CHOICE", payload: choice });
             if (vehicle.length > 0) {
-                dispatch({ type: "SOULTION_FOUND", payload: true });
+                dispatch({ type: "SOLUTION_FOUND", payload: true });
             }
             else {
-                dispatch({ type: "SOULTION_FOUND", payload: false });
+                dispatch({ type: "SOLUTION_FOUND", payload: false });
             }
         })
         .catch(error => {

@@ -10,7 +10,6 @@ function App() {
 
   const state = useSelector((state) => state.repos);
   const login = state.loggedIn;
-  console.log(state, login);
 
   return (
     <div className="App">

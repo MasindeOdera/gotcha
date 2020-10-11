@@ -1,4 +1,4 @@
-import { SAVE_QUERY, SAVE_CHOICE, LOADING, LOGIN_STATUS, SOULTION_FOUND } from './types';
+import { SAVE_QUERY, SAVE_CHOICE, LOADING, LOGIN_STATUS, SOLUTION_FOUND, ADD_PHOTO } from './types';
 
 export const saveQuery = query => {
     return {
@@ -29,7 +29,14 @@ export const loginStatus = login => {
 
 export const solutionFound = solution => {
     return {
-        type: SOULTION_FOUND,
+        type: SOLUTION_FOUND,
         payload: solution
+    }
+};
+
+export const addPhoto = photo => {
+    return {
+        type: ADD_PHOTO,
+        payload: photo
     }
 };

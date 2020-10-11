@@ -1,14 +1,11 @@
 import React from 'react';
-import { connect, useDispatch, useSelector } from 'react-redux';
+import { connect, useDispatch } from 'react-redux';
 import { Image } from 'semantic-ui-react';
 import logo from '../../images/logo.png';
 import './styles.scss';
 
 function Header() {
     const dispatch = useDispatch();
-    const state = useSelector((state) => state.repos);
-    const login = state.loggedIn;
-    console.log(state, login);
 
     const logout = () => {
         dispatch({type:"LOGIN_STATUS", payload: false});

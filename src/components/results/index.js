@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { Button, Card, Image } from 'semantic-ui-react';
 import { connect, useDispatch, useSelector } from 'react-redux';
 import logo from '../../images/logo.png';
@@ -10,14 +10,36 @@ const Results = () => {
     const state = useSelector((state) => state.repos);
     const choice = state.choice;
     const solution = state.solution;
-    console.log(state, choice);
+    const photo = state.photo;
+
+    //If a vehicle has been fond via license plate, then look for image.
+    if (solution) {
+        let query = choice.merk;
+        let uri = `https://www.googleapis.com/customsearch/v1?q=${query}&cx=009973936156204013139%3Anrb9qxuk0na&num=1&key=AIzaSyCDfpyxYE4gK2zgNltdbAjEATo5fcP5uq8`;
+        fetch(uri)
+        .then(res => res.json())
+        .then(res => {
+            console.log("Photo:", res);
+            let photo = res.items[0].pagemap.cse_thumbnail[0].src;
+            console.log(photo);
+            if (photo !== undefined) {
+                dispatch({ type: "ADD_PHOTO", payload: photo });
+            }
+        })
+        .catch(error => {
+            console.error({error});
+        })
+    }
+
+    //If there is an image available, use it, otherwise use logo as default.
+    const image = solution && photo ? photo : logo;
 
     const vehicle = solution ? <Card>
         <Card.Content>
             <Image
                 floated='right'
                 size='tiny'
-                src={logo}
+                src={image}
             />
             <Card.Header>Car: {choice.merk}</Card.Header>
             <Card.Meta>License Plate: {choice.kenteken}</Card.Meta>
