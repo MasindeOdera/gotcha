@@ -31,6 +31,10 @@ const Results = () => {
         })
     }
 
+    const sendToBackend = () => {
+        //
+    };
+
     //If there is an image available, use it, otherwise use logo as default.
     const image = solution && photo ? photo : logo;
 
@@ -61,7 +65,7 @@ const Results = () => {
         </Card.Content>
         <Card.Content extra>
             <div className='ui two buttons'>
-                <Button basic color='green'>
+                <Button basic color='green' onClick={sendToBackend}>
                     Save
                     </Button>
                 <Button basic color='red'>

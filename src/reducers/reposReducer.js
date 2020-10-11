@@ -1,4 +1,4 @@
-import { SAVE_QUERY, SAVE_CHOICE, LOADING, LOGIN_STATUS, SOLUTION_FOUND, ADD_PHOTO } from '../actions/types';
+import { SAVE_QUERY, SAVE_CHOICE, LOADING, LOGIN_STATUS, SOLUTION_FOUND, ADD_PHOTO, SAVE_AUTHENTICATION } from '../actions/types';
 
 const initialState = {
     query: '',
@@ -7,6 +7,7 @@ const initialState = {
     loggedIn: false,
     solution: false,
     photo: '',
+    authentication: [],
 }
 
 export default function (state = initialState, action) {
@@ -40,6 +41,11 @@ export default function (state = initialState, action) {
             return {
                 ...state,
                 photo: action.payload,
+            };
+        case SAVE_AUTHENTICATION:
+            return {
+                ...state,
+                authentication: action.payload,
             };
         default:
             return state;

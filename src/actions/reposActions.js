@@ -1,4 +1,4 @@
-import { SAVE_QUERY, SAVE_CHOICE, LOADING, LOGIN_STATUS, SOLUTION_FOUND, ADD_PHOTO } from './types';
+import { SAVE_QUERY, SAVE_CHOICE, LOADING, LOGIN_STATUS, SOLUTION_FOUND, ADD_PHOTO, SAVE_AUTHENTICATION } from './types';
 
 export const saveQuery = query => {
     return {
@@ -38,5 +38,12 @@ export const addPhoto = photo => {
     return {
         type: ADD_PHOTO,
         payload: photo
+    }
+};
+
+export const saveAuthentication = authentication => {
+    return {
+        type: SAVE_AUTHENTICATION,
+        payload: authentication
     }
 };

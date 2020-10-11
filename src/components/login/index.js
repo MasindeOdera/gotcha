@@ -34,10 +34,12 @@ const Login = () => {
 
         xhr.addEventListener("readystatechange", function () {
             if (this.readyState === 4) {
+                let authentication = this.responseText;
                 const authenticated = this.responseText[2];
                 // If the responseText has 'auth_token', then the credentials were accepted.
                 if (authenticated === 'a') {
                     dispatch({type:"LOGIN_STATUS", payload: true});
+                    dispatch({type:"SAVE_AUTHENTICATION", payload: authentication});
                 }
                 else {
                     alert("Incorrect Email/Password, please try again");

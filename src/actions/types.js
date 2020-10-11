@@ -4,3 +4,4 @@ export const LOADING = 'LOADING';
 export const LOGIN_STATUS = 'LOGIN_STATUS';
 export const SOLUTION_FOUND = 'SOLUTION_FOUND';
 export const ADD_PHOTO = 'ADD_PHOTO';
+export const SAVE_AUTHENTICATION = 'SAVE_AUTHENTICATION';
