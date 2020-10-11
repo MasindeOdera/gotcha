@@ -3,6 +3,7 @@ import { connect, useSelector } from 'react-redux';
 import Login from './components/login';
 import Header from './components/header';
 import Searchbar from './components/searchBar';
+import Results from './components/results';
 import './App.css';
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
       { !login ? <Login /> : null}
       { login ? <Header />  : null}
       { login ? <Searchbar />: null} 
+      { login ? <Results /> : null} 
     </div>
   );
 }

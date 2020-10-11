@@ -55,15 +55,6 @@ const Login = () => {
         xhr.send(data);
     };
 
-    // fetch("https://opendata.rdw.nl/resource/m9d7-ebf2.json")
-    //     .then(res => res.json())
-    //     .then(res => {
-    //         console.log({res});
-    //     })
-    //     .catch(error => {
-    //         console.error({error});
-    //     });
-
     return (
         <div className="login" data-test="loginComponent">
             <form className="loginForm" onSubmit={handleSubmit}>

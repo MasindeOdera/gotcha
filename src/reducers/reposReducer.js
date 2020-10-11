@@ -1,31 +1,24 @@
-import { SAVE_REPOS, SAVE_QUERY, LOADING, LOGIN_STATUS, CLEAR_ITEMS } from '../actions/types';
+import { SAVE_QUERY, SAVE_CHOICE, LOADING, LOGIN_STATUS, SOULTION_FOUND } from '../actions/types';
 
 const initialState = {
     query: '',
-    items: [],
+    choice: [],
     loading: false,
-    loggedIn: false,   
+    loggedIn: false,
+    solution: false,
 }
 
 export default function (state = initialState, action) {
     switch(action.type) {
-        // case FETCH_REPOS:
-        //     return {
-        //         ...state,
-        //         items: action.payload.items || [],
-        //         query: state.query,
-        //         loading: false,
-        //         currentPage: state.currentPage,
-        //     };
-        case SAVE_REPOS:
-            return {
-                ...state,
-                items: action.payload
-            }
         case SAVE_QUERY:
             return {
                 ...state,
                 query: action.payload,
+            };
+        case SAVE_CHOICE:
+            return {
+                ...state,
+                choice: action.payload,
             };
         case LOADING:
             return {
@@ -37,10 +30,10 @@ export default function (state = initialState, action) {
                 ...state,
                 loggedIn: action.payload,
             };
-        case CLEAR_ITEMS:
+        case SOULTION_FOUND:
             return {
                 ...state,
-                items: [],
+                solution: action.payload,
             };
         default:
             return state;

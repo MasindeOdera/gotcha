@@ -1,28 +1,4 @@
-import { SAVE_REPOS, SAVE_QUERY, LOADING, LOGIN_STATUS, CLEAR_ITEMS } from './types';
-
-// export const fetchRepos = (currentPage, query) => dispatch => {
-//     let url = `https://api.github.com/search/repositories?q=${query}+in:repositories?page=${currentPage}&per_page=30`;
-//     fetch(url)
-//     .then(res => res.json())
-//     .then(data => dispatch({
-//         type: FETCH_REPOS,   
-//         payload: data,     
-//     })).then(data => console.log({data}));
-
-//     var myHeaders = new Headers();
-
-//     myHeaders.append('Content-Type', 'text/xml');
-//     myHeaders.get('Content-Type') // should return 'text/xml';
-//     console.log(myHeaders);
-
-// };
-
-export const saveRepos = res => {
-    return {
-        type: SAVE_REPOS,
-        payload: res
-    }
-};
+import { SAVE_QUERY, SAVE_CHOICE, LOADING, LOGIN_STATUS, SOULTION_FOUND } from './types';
 
 export const saveQuery = query => {
     return {
@@ -31,20 +7,12 @@ export const saveQuery = query => {
     }
 };
 
-// export const storeDetail = () => dispatch => {
-//     dispatch({
-//         type: STORE_DETAIL,
-//     })
-// };
-
-// export const findUser = user => dispatch => {
-//     fetch(`https://api.github.com/search/users?q=${user}`)
-//     .then(res => res.json())
-//     .then(data => dispatch({
-//         type: FIND_USER,
-//         payload: data.items,
-//     })).then(data => console.log(data));
-// };
+export const saveChoice = choice => {
+    return {
+        type: SAVE_CHOICE,
+        payload: choice
+    }
+};
 
 export const setLoading = () => {
     return {
@@ -59,8 +27,9 @@ export const loginStatus = login => {
     }
 };
 
-export const clearItems = () => {
+export const solutionFound = solution => {
     return {
-        type: CLEAR_ITEMS
+        type: SOULTION_FOUND,
+        payload: solution
     }
 };

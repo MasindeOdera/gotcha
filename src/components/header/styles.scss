@@ -1,6 +1,6 @@
 @import "../../sharedStyles.scss";
 
-.header {
+.titleHead {
   background-color: $primaryBackground;
   border-top-left-radius: 25px;
   border-top-right-radius: 25px;
@@ -15,11 +15,13 @@
   justify-content: space-between;
   align-items: center;
 
-  img {
+  .companyLogo {
     padding: 8px 0;
+    width: 40px;
+    height: 40px;
   }
 
-  img,
+  .companyLogo,
   h2 {
     padding-right: 2rem;
     cursor: default;
@@ -27,7 +29,6 @@
 
   .logout {
     background-color: $primaryBlack;
-    border-top-right-radius: 14px;
     color: $primaryWhite;
     padding: 4px 8px;
     border: none;
